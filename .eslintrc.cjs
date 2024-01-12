@@ -53,6 +53,13 @@ module.exports = {
         "import/no-unresolved": "off",
         "no-shadow": "off",
         "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                devDependencies: true,
+            },
+        ],
         "react/jsx-filename-extension": [
             "warn",
             {
