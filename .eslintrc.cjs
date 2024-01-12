@@ -29,12 +29,17 @@ module.exports = {
         ecmaFeatures: {
             jsx: true,
         },
-        project: "./tsconfig.json",
     },
     ignorePatterns: ["dist", ".eslintrc.cjs"],
     parser: "@typescript-eslint/parser",
-    plugins: ["react-refresh"],
+    plugins: ["react-refresh", "@typescript-eslint", "react"],
     rules: {
+        "import/no-extraneous-dependencies": [
+            "error",
+            {
+                devDependencies: true,
+            },
+        ],
         "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
         "no-unused-vars": [
             "error",
@@ -45,6 +50,14 @@ module.exports = {
                 argsIgnorePattern: "^_",
             },
         ],
+        "import/no-unresolved": "off",
+        "no-shadow": "off",
         "react/react-in-jsx-scope": "off",
+        "react/jsx-filename-extension": [
+            "warn",
+            {
+                extensions: [".tsx"],
+            },
+        ],
     },
 };
